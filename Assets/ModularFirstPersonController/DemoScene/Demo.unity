@@ -169,6 +169,12 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!20 &16440112 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4459864851310106426, guid: 6bacecc4f3df9584198879c73a6b6c36,
+    type: 3}
+  m_PrefabInstance: {fileID: 8765489994903951804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &22482461
 GameObject:
   m_ObjectHideFlags: 0
@@ -4968,7 +4974,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 690951627}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &605079968
+--- !u!114 &605079971
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4977,10 +4983,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 605079964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55032c84e2b1a804294e0b6a59fc3d87, type: 3}
+  m_Script: {fileID: 11500000, guid: e7826dd7654f2c541abb126249ffaf3c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TriggerLightOnCollision
---- !u!65 &605079969
+  m_EditorClassIdentifier: Assembly-CSharp::LightToggleInteractable
+  hueController: {fileID: 1743705847}
+--- !u!65 &605079972
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4999,20 +5006,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.15269879, y: 0.2392956, z: 0.18497555}
-  m_Center: {x: 0.004402116, y: 0.000000059604645, z: 0.09247154}
---- !u!114 &605079970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605079964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 367485551e8a7ea4da0dea01f8a293fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HueController
+  m_Size: {x: 0.1438948, y: 0.2392956, z: 0.02832119}
+  m_Center: {x: 0.00000021979221, y: 0.000000059604645, z: 0.014160401}
 --- !u!1001 &615669788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5191,15 +5186,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7138360642778068323, guid: aa791e35fcac7264ca2d38c0d3e4ccc3,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 605079969}
+      addedObject: {fileID: 605079971}
     - targetCorrespondingSourceObject: {fileID: 7138360642778068323, guid: aa791e35fcac7264ca2d38c0d3e4ccc3,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 605079968}
-    - targetCorrespondingSourceObject: {fileID: 7138360642778068323, guid: aa791e35fcac7264ca2d38c0d3e4ccc3,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 605079970}
+      addedObject: {fileID: 605079972}
   m_SourcePrefab: {fileID: 100100000, guid: aa791e35fcac7264ca2d38c0d3e4ccc3, type: 3}
 --- !u!1 &705507993
 GameObject:
@@ -7163,6 +7154,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1039753631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1233654513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36,
+    type: 3}
+  m_PrefabInstance: {fileID: 8765489994903951804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1233654520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233654513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9c07d5ab8e57244fa2315924ea988c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
+  playerCamera: {fileID: 16440112}
+  interactDistance: 3
+  interactKey: 101
 --- !u!43 &1282754072
 Mesh:
   m_ObjectHideFlags: 0
@@ -7673,7 +7685,7 @@ PrefabInstance:
     - target: {fileID: 7936599477366098658, guid: 142ac07ac204863418a6f3f9b0ac660c,
         type: 3}
       propertyPath: m_Name
-      value: Lamp_Table_Apt_02
+      value: Hue Lamp
       objectReference: {fileID: 0}
     - target: {fileID: 7936599477366098658, guid: 142ac07ac204863418a6f3f9b0ac660c,
         type: 3}
@@ -7689,7 +7701,11 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 556736738836136956, guid: 142ac07ac204863418a6f3f9b0ac660c, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7936599477366098658, guid: 142ac07ac204863418a6f3f9b0ac660c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1743705847}
   m_SourcePrefab: {fileID: 100100000, guid: 142ac07ac204863418a6f3f9b0ac660c, type: 3}
 --- !u!4 &1512949818 stripped
 Transform:
@@ -10061,6 +10077,24 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &1743705843 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7936599477366098658, guid: 142ac07ac204863418a6f3f9b0ac660c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1512949817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1743705847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743705843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367485551e8a7ea4da0dea01f8a293fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HueController
 --- !u!4 &1751517240 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3667825465465734118, guid: 226aa234041d2be48881aab9632ea78e,
@@ -12378,6 +12412,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4459864851310106426, guid: 6bacecc4f3df9584198879c73a6b6c36,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459864851310106426, guid: 6bacecc4f3df9584198879c73a6b6c36,
+        type: 3}
       propertyPath: m_BackGroundColor.a
       value: 1
       objectReference: {fileID: 0}
@@ -12400,6 +12439,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1233654520}
     - targetCorrespondingSourceObject: {fileID: 4459864851310106424, guid: 6bacecc4f3df9584198879c73a6b6c36,
         type: 3}
       insertIndex: -1
