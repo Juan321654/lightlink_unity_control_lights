@@ -6,9 +6,8 @@ public class HueController : MonoBehaviour
 {
     private string bridgeIp = "192.168.0.189";
     private string userToken = "YQC2nfg1xA9Exie0K80JOWgE5dY67thE8Q-WMoXK";
-    private int lightId = 3; // pick one of your bulbs
 
-    public void SetLightColor(int r, int g, int b)
+    public void SetLightColor(int r, int g, int b, int lightId)
     {
         // Philips Hue expects xy color or hue/sat, but for demo, send RGB as 'xy' placeholder
         // You should convert RGB to xy for real Hue API, but here is a simple example:
@@ -17,14 +16,14 @@ public class HueController : MonoBehaviour
         StartCoroutine(SendRequest(url, json));
     }
 
-    public void SetLightBrightness(int brightness)
+    public void SetLightBrightness(int brightness, int lightId)
     {
         string url = $"http://{bridgeIp}/api/{userToken}/lights/{lightId}/state";
         string json = $"{{\"bri\":{brightness}}}";
         StartCoroutine(SendRequest(url, json));
     }
 
-    public void SetLightOn(bool on)
+    public void SetLightOn(bool on, int lightId)
     {
         string url = $"http://{bridgeIp}/api/{userToken}/lights/{lightId}/state";
         string json = $"{{\"on\":{on.ToString().ToLower()} }}";

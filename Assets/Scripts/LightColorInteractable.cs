@@ -4,6 +4,7 @@ public class LightColorInteractable : Interactable
 {
     public HueController hueController;
     public Color color = Color.white;
+    public int lightId = 3;
 
     private void Awake()
     {
@@ -20,7 +21,7 @@ public class LightColorInteractable : Interactable
             int r = Mathf.RoundToInt(color.r * 255);
             int g = Mathf.RoundToInt(color.g * 255);
             int b = Mathf.RoundToInt(color.b * 255);
-            hueController.SetLightColor(r, g, b);
+            hueController.SetLightColor(r, g, b, lightId);
         }
     }
 }

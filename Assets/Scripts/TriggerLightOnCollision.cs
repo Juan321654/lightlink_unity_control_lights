@@ -3,6 +3,7 @@ using UnityEngine;
 public class TriggerLightOnCollision : MonoBehaviour
 {
     private HueController hueController;
+    public int lightId = 3;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,7 +26,7 @@ public class TriggerLightOnCollision : MonoBehaviour
         Debug.Log("Button pressed");
         if (hueController != null)
         {
-            hueController.SetLightOn(true);
+            hueController.SetLightOn(true, lightId);
         }
     }
 
@@ -34,7 +35,7 @@ public class TriggerLightOnCollision : MonoBehaviour
         Debug.Log("Button released");
         if (hueController != null)
         {
-            hueController.SetLightOn(false);
+            hueController.SetLightOn(false, lightId);
         }
     }
 }

@@ -3,6 +3,7 @@ using UnityEngine;
 public class LightToggleInteractable : Interactable
 {
   public HueController hueController;
+  public int lightId = 3;
   private bool isOn = false;
 
   private void Awake()
@@ -24,7 +25,7 @@ public class LightToggleInteractable : Interactable
     isOn = !isOn;
     if (hueController != null)
     {
-      hueController.SetLightOn(isOn);
+      hueController.SetLightOn(isOn, lightId);
     }
   }
 }
