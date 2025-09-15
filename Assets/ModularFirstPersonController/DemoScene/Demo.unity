@@ -2157,7 +2157,7 @@ Transform:
   m_GameObject: {fileID: 134336857}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.39, y: 2.1515307, z: 9.026831}
+  m_LocalPosition: {x: -5.39, y: 2.1515307, z: 8.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3343,6 +3343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LightToggleInteractable
   hueController: {fileID: 459860888}
   lightId: 2
+  localLightSource: {fileID: 0}
 --- !u!114 &459860888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3914,6 +3915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LightToggleInteractable
   hueController: {fileID: 1743705847}
   lightId: 3
+  localLightSource: {fileID: 0}
 --- !u!65 &605079972
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7881,6 +7883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LightToggleInteractable
   hueController: {fileID: 1113531399}
   lightId: 3
+  localLightSource: {fileID: 0}
 --- !u!1 &1130324921
 GameObject:
   m_ObjectHideFlags: 0
@@ -10320,6 +10323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LightToggleInteractable
   hueController: {fileID: 1743705847}
   lightId: 1
+  localLightSource: {fileID: 0}
 --- !u!1 &1838606099
 GameObject:
   m_ObjectHideFlags: 0

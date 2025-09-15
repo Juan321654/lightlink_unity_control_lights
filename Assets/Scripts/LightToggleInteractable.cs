@@ -3,7 +3,8 @@ using UnityEngine;
 public class LightToggleInteractable : Interactable
 {
   public HueController hueController;
-  public int lightId = 3;
+  public int lightId;
+  public Light localLightSource;
   private bool isOn = false;
 
   private void Awake()
@@ -17,6 +18,14 @@ public class LightToggleInteractable : Interactable
         Debug.LogError("HueController not found in scene. LightToggleInteractable will not function.");
       }
     }
+    if (localLightSource == null)
+    {
+      localLightSource = GetComponentInChildren<Light>(true);
+      if (localLightSource == null)
+      {
+        Debug.LogWarning("No Light component found as child of this prefab.");
+      }
+    }
   }
 
   public override void OnInteract()
@@ -26,6 +35,10 @@ public class LightToggleInteractable : Interactable
     if (hueController != null)
     {
       hueController.SetLightOn(isOn, lightId);
+    }
+    if (localLightSource != null)
+    {
+      localLightSource.gameObject.SetActive(isOn);
     }
   }
 }
